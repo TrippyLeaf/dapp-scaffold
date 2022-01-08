@@ -12,8 +12,8 @@ import { formatUSD } from "../../utils/utils";
 export const HomeView = () => {
   const { marketEmitter, midPriceInUSD } = useMarkets();
   const { tokenMap } = useConnectionConfig();
-  const SRM_ADDRESS = 'SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt';
-  const SRM = useUserBalance(SRM_ADDRESS);
+  const TRPY_ADDRESS = 'DrQJnDHk3SiVa64gPTvQmdgwA55LstoU5wEeoGbsQ735';
+  const TRPY = useUserBalance(TRPY_ADDRESS);
   const SOL = useUserBalance(WRAPPED_SOL_MINT);
   const { balanceInUSD: totalBalanceInUSD } = useUserTotalBalance();
 
@@ -37,7 +37,7 @@ export const HomeView = () => {
         <h2>Your balances ({formatUSD.format(totalBalanceInUSD)}):</h2>
         <h2>SOL: {SOL.balance} ({formatUSD.format(SOL.balanceInUSD)})</h2>
         <h2 style={{ display: 'inline-flex', alignItems: 'center' }}>
-          <TokenIcon mintAddress={SRM_ADDRESS} /> SRM: {SRM?.balance} ({formatUSD.format(SRM?.balanceInUSD)})
+          <TokenIcon mintAddress={TRPY_ADDRESS} /> TRPY: {TRPY?.balance} ({formatUSD.format(TRPY?.balanceInUSD)})
         </h2>
       </Col>
 
